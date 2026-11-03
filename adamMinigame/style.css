@@ -1,0 +1,30 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+  flex: none;
+  touch-action: none;
+}
+#game-wrap {
+  display: block;
+}
+/* Fullscreen: black letterbox, game centered and scaled by sketch.js */
+#game-wrap:fullscreen,
+#game-wrap:-webkit-full-screen,
+#game-wrap.pseudo-fs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+/* Fallback when the browser blocks real fullscreen (e.g. embedded preview) */
+#game-wrap.pseudo-fs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}

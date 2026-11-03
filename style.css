@@ -1,0 +1,453 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: grid;
+    place-items: center;
+    padding: 44px 22px;
+
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: #087da9;
+
+    background:
+        radial-gradient(ellipse at 50% 5%,
+            rgba(255,255,255,.98),
+            rgba(255,255,255,.35) 24%,
+            transparent 49%),
+        radial-gradient(ellipse at 8% 90%,
+            #b8f5e8,
+            transparent 37%),
+        radial-gradient(ellipse at 94% 82%,
+            #a5d9ff,
+            transparent 40%),
+        linear-gradient(145deg,
+            #baf4ff,
+            #8bdcf6,
+            #b8e9ff,
+            #e2fff6);
+}
+
+/* Main layout */
+
+.landing {
+    width: min(100%, 980px);
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    text-align: center;
+    margin: 0 auto 48px;
+}
+
+/* Logo */
+
+.orbital-mark {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 16px;
+    position: relative;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        145deg,
+        #eaffff,
+        #72d8f2 55%,
+        #249acb
+    );
+
+    box-shadow:
+        inset 5px 6px 12px rgba(255,255,255,.95),
+        inset -7px -9px 16px rgba(0,103,165,.25),
+        0 12px 28px rgba(0,112,165,.22);
+}
+
+.orbital-ring {
+    position: absolute;
+    width: 112px;
+    height: 39px;
+    left: -12px;
+    top: 25px;
+
+    border: 4px solid rgba(255,255,255,.92);
+    border-radius: 50%;
+    transform: rotate(-32deg);
+}
+
+.orbital-core {
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    left: 25px;
+    top: 24px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #fff,
+        #9af0ff 65%,
+        #42bde5
+    );
+}
+
+.orbital-glint {
+    position: absolute;
+    width: 14px;
+    height: 6px;
+    left: 25px;
+    top: 18px;
+    border-radius: 50%;
+    background: white;
+    transform: rotate(-35deg);
+}
+
+/* Title */
+
+h1 {
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 5.8rem);
+    line-height: .98;
+    letter-spacing: -.065em;
+    font-weight: 800;
+    color: #087ba7;
+
+    text-shadow:
+        0 2px 0 white,
+        0 5px 0 rgba(255,255,255,.5),
+        0 12px 22px rgba(0,100,150,.2);
+}
+
+.hero p {
+    margin: 16px 0 0;
+    font-size: clamp(.95rem, 2vw, 1.2rem);
+    font-weight: 700;
+    letter-spacing: .045em;
+    color: #167fa3;
+
+    text-shadow: 0 1px 0 white;
+}
+
+/* Game selection panel */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    padding: 22px;
+    border-radius: 34px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.62),
+        rgba(255,255,255,.2)
+    );
+
+    border: 1px solid rgba(255,255,255,.86);
+
+    box-shadow:
+        inset 0 2px 2px rgba(255,255,255,.9),
+        0 24px 55px rgba(0,105,155,.18);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+/* Individual game tiles */
+
+.game-tile {
+    min-height: 190px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    position: relative;
+
+    border-radius: 26px;
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,.95);
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.94),
+        rgba(150,230,250,.5)
+    );
+
+    box-shadow:
+        inset 0 4px 9px rgba(255,255,255,.95),
+        inset 0 -8px 18px rgba(26,147,190,.12),
+        0 10px 22px rgba(0,104,153,.14);
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease;
+}
+
+.game-tile::before {
+    content: "";
+    position: absolute;
+    width: 160%;
+    height: 65%;
+    top: -33%;
+    left: -30%;
+
+    transform: rotate(-18deg);
+    border-radius: 50%;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,.8),
+        rgba(255,255,255,0)
+    );
+}
+
+.game-tile:hover,
+.game-tile:focus-visible {
+    transform: translateY(-8px) scale(1.025);
+
+    box-shadow:
+        inset 0 4px 9px white,
+        0 18px 30px rgba(0,104,153,.25);
+
+    outline: 3px solid rgba(255,255,255,.85);
+    outline-offset: 4px;
+}
+
+.game-tile:active {
+    transform: translateY(-2px) scale(.99);
+}
+
+/* Tile artwork */
+
+.tile-art {
+    width: 106px;
+    height: 106px;
+    display: block;
+    position: relative;
+
+    border-radius: 30px;
+    transform: rotate(-8deg);
+
+    box-shadow:
+        0 12px 20px rgba(0,103,153,.2),
+        inset 0 3px 5px rgba(255,255,255,.9);
+}
+
+.tile-art i,
+.tile-art b {
+    position: absolute;
+    display: block;
+}
+
+/* Adam */
+
+.art-one {
+    background: linear-gradient(
+        145deg,
+        #c9fffb,
+        #27c8d7 55%,
+        #087da9
+    );
+}
+
+.art-one i {
+    width: 58px;
+    height: 58px;
+    left: 24px;
+    top: 23px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff, #8ceeff);
+    box-shadow: inset -5px -7px 12px #45aeca;
+}
+
+.art-one b {
+    width: 32px;
+    height: 12px;
+    left: 37px;
+    top: 45px;
+    border-radius: 50%;
+    background: white;
+    transform: rotate(-25deg);
+}
+
+/* Chris */
+
+.art-two {
+    background: linear-gradient(
+        145deg,
+        #e8faff,
+        #63b9ff 55%,
+        #3266c8
+    );
+}
+
+.art-two i {
+    width: 52px;
+    height: 66px;
+    left: 27px;
+    top: 19px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fff, #b4eaff);
+    box-shadow: inset -5px -5px 10px #6bb6e3;
+}
+
+.art-two b {
+    width: 29px;
+    height: 29px;
+    left: 39px;
+    top: 38px;
+    border: 5px solid #2c9dcc;
+    border-radius: 50%;
+}
+
+/* Mason */
+
+.art-three {
+    background: linear-gradient(
+        145deg,
+        #e5fff3,
+        #70dcae 55%,
+        #199c92
+    );
+}
+
+.art-three i {
+    width: 64px;
+    height: 64px;
+    left: 21px;
+    top: 21px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff, #a6f8db);
+    box-shadow: inset -5px -6px 10px #61c9ad;
+}
+
+.art-three b {
+    width: 34px;
+    height: 34px;
+    left: 36px;
+    top: 36px;
+    border: 5px solid #31b9a7;
+    border-radius: 50%;
+}
+
+/* Matthew */
+
+.art-four {
+    background: linear-gradient(
+        145deg,
+        #f2faff,
+        #a9bfff 55%,
+        #627bd0
+    );
+}
+
+.art-four i {
+    width: 60px;
+    height: 60px;
+    left: 23px;
+    top: 23px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #fff, #c9d7ff);
+    box-shadow: inset -5px -6px 10px #9cabe5;
+}
+
+.art-four b {
+    width: 34px;
+    height: 34px;
+    left: 36px;
+    top: 36px;
+    border: 5px solid #7798df;
+    border-radius: 50%;
+}
+
+/* Floating bubbles */
+
+.bubble {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+
+    border: 1px solid rgba(255,255,255,.7);
+
+    background: radial-gradient(
+        circle at 32% 25%,
+        rgba(255,255,255,.9),
+        rgba(255,255,255,.13) 50%,
+        rgba(255,255,255,.02) 72%
+    );
+
+    box-shadow:
+        inset -5px -7px 12px rgba(255,255,255,.2),
+        0 8px 20px rgba(0,130,170,.08);
+}
+
+.bubble-one {
+    width: 74px;
+    height: 74px;
+    left: 8%;
+    top: 17%;
+}
+
+.bubble-two {
+    width: 34px;
+    height: 34px;
+    right: 13%;
+    top: 24%;
+}
+
+.bubble-three {
+    width: 112px;
+    height: 112px;
+    right: 5%;
+    bottom: 8%;
+}
+
+.bubble-four {
+    width: 48px;
+    height: 48px;
+    left: 15%;
+    bottom: 12%;
+}
+
+/* Mobile layout */
+
+@media (max-width: 720px) {
+    .game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .game-tile {
+        min-height: 155px;
+    }
+}
+
+@media (max-width: 390px) {
+    .game-grid {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .game-tile {
+        min-height: 130px;
+    }
+
+    .tile-art {
+        transform: scale(.82) rotate(-8deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .game-tile {
+        transition: none;
+    }
+}

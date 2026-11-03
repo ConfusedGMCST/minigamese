@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="game-container">
+      
+      <!-- Left Panel -->
+      <div id="passwords-panel" class="image-panel left-box">
+        <h2 class="sloppy-title">Passwords (<span id="pwd-count">0</span>/<span id="pwd-max">3</span>)</h2>
+        <input type="text" id="pwd-input" class="drawn-element" maxlength="15" placeholder="Type & press Enter..." autocomplete="off">
+        <div id="pwd-list"></div>
+      </div>
+
+      <!-- Center Panel -->
+      <div id="center-panel">
+        <img src="password.png" alt="Password Up" class="center-img">
+        <img src="slogan.png" alt="The better the password, the better the profit" class="center-slogan">
+      </div>
+
+      <!-- Right Panel -->
+      <div id="upgrades-panel" class="image-panel right-box">
+        <h2 class="sloppy-title text-center">Upgrades</h2>
+        <div id="upgrades-list">
+          <button id="upg-cap" class="drawn-element btn">
+            <span class="btn-title">More Passwords</span><br>
+            Cost: $<span id="cost-cap">50</span>
+          </button>
+          <button id="upg-flat" class="drawn-element btn">
+            <span class="btn-title">Profit Boost</span><br>
+            Cost: $<span id="cost-flat">100</span>
+          </button>
+          <button id="upg-mult" class="drawn-element btn">
+            <span class="btn-title">Strength Multiplier</span><br>
+            Cost: $<span id="cost-mult">200</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Panel -->
+      <div id="profit-panel" class="bottom-panel">
+        <h2 class="sloppy-title">Profit: <span id="profit-rate">0</span>/s</h2>
+        <h2 class="sloppy-title">Money: $<span id="money">0</span></h2>
+      </div>
+
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

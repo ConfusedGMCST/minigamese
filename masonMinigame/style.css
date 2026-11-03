@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f0;
+  font-family: 'Caveat', cursive;
+  overflow: hidden;
+  color: #222;
+}
+
+#game-container {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  grid-template-rows: 1fr 120px;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.image-panel {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  padding: 50px 30px 70px 30px; 
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.left-box {
+  background-image: url('box1.png');
+}
+
+.right-box {
+  background-image: url('box2.png');
+}
+
+.bottom-panel {
+  grid-column: 1 / -1;
+  background-image: url('box3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+#center-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.center-img {
+  max-width: 95%;
+  max-height: 55%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.center-slogan {
+  max-width: 85%;
+  max-height: 35%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.sloppy-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.drawn-element {
+  font-family: 'Caveat', cursive;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #111;
+  border-radius: 5px 255px 3px 25px / 255px 5px 225px 3px;
+  box-sizing: border-box;
+}
+
+#pwd-input {
+  font-size: 24px;
+  padding: 10px 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  outline: none;
+  text-align: center;
+}
+
+#pwd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pwd-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px dashed #aaa;
+  padding-bottom: 5px;
+}
+
+.pwd-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pwd-text {
+  font-size: 24px;
+  word-break: break-all;
+}
+
+.pwd-delete {
+  background: transparent;
+  border: none;
+  color: #cc0000;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+}
+
+.pwd-repeated {
+  color: #cc0000;
+  font-size: 18px;
+}
+
+#upgrades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn {
+  width: 90%;
+  font-size: 22px;
+  padding: 12px 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.15);
+}
+
+.btn-title {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+}

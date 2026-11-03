@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -10,130 +12,109 @@ html, body {
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
+    padding: 45px 22px;
     display: grid;
     place-items: center;
-    padding: 44px 22px;
+    overflow-x: hidden;
 
-    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-    color: #087da9;
+    font-family: 'Nunito', 'Comic Sans MS', sans-serif;
+    color: #292929;
 
-    background:
-        radial-gradient(ellipse at 50% 5%,
-            rgba(255,255,255,.98),
-            rgba(255,255,255,.35) 24%,
-            transparent 49%),
-        radial-gradient(ellipse at 8% 90%,
-            #b8f5e8,
-            transparent 37%),
-        radial-gradient(ellipse at 94% 82%,
-            #a5d9ff,
-            transparent 40%),
-        linear-gradient(145deg,
-            #baf4ff,
-            #8bdcf6,
-            #b8e9ff,
-            #e2fff6);
+    background-color: #fffdf5;
+    background-image: radial-gradient(#dedbd0 1.2px, transparent 1.2px);
+    background-size: 23px 23px;
 }
 
 /* Main layout */
 
 .landing {
-    width: min(100%, 980px);
+    width: min(100%, 1000px);
     position: relative;
     z-index: 1;
 }
 
 .hero {
     text-align: center;
-    margin: 0 auto 48px;
+    margin: 0 auto 55px;
 }
 
-/* Logo */
+/* Hand-drawn logo */
 
 .orbital-mark {
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 16px;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 18px;
     position: relative;
-    border-radius: 50%;
 
-    background: linear-gradient(
-        145deg,
-        #eaffff,
-        #72d8f2 55%,
-        #249acb
-    );
+    background: #ffdc55;
+    border: 4px solid #292929;
+    border-radius: 42% 58% 53% 47% / 55% 43% 57% 45%;
 
-    box-shadow:
-        inset 5px 6px 12px rgba(255,255,255,.95),
-        inset -7px -9px 16px rgba(0,103,165,.25),
-        0 12px 28px rgba(0,112,165,.22);
+    transform: rotate(-8deg);
+    box-shadow: 4px 5px 0 #292929;
 }
 
 .orbital-ring {
     position: absolute;
-    width: 112px;
-    height: 39px;
+    width: 94px;
+    height: 34px;
+    top: 17px;
     left: -12px;
-    top: 25px;
 
-    border: 4px solid rgba(255,255,255,.92);
-    border-radius: 50%;
-    transform: rotate(-32deg);
+    border: 4px solid #292929;
+    border-radius: 48% 52% 44% 56%;
+    transform: rotate(-35deg);
 }
 
 .orbital-core {
     position: absolute;
-    width: 39px;
-    height: 39px;
-    left: 25px;
-    top: 24px;
-    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    top: 20px;
+    left: 20px;
 
-    background: linear-gradient(
-        135deg,
-        #fff,
-        #9af0ff 65%,
-        #42bde5
-    );
+    background: #ff806b;
+    border: 3px solid #292929;
+    border-radius: 45% 55% 52% 48%;
 }
 
 .orbital-glint {
     position: absolute;
-    width: 14px;
-    height: 6px;
-    left: 25px;
-    top: 18px;
-    border-radius: 50%;
+    width: 10px;
+    height: 5px;
+    top: 14px;
+    left: 18px;
+
     background: white;
-    transform: rotate(-35deg);
+    border-radius: 50%;
+    transform: rotate(-30deg);
 }
 
-/* Title */
+/* Main title */
 
 h1 {
     margin: 0;
+
     font-size: clamp(3rem, 8vw, 5.8rem);
-    line-height: .98;
-    letter-spacing: -.065em;
-    font-weight: 800;
-    color: #087ba7;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -3px;
+
+    color: #292929;
 
     text-shadow:
-        0 2px 0 white,
-        0 5px 0 rgba(255,255,255,.5),
-        0 12px 22px rgba(0,100,150,.2);
+        3px 3px 0 #ffdc55,
+        5px 5px 0 #292929;
 }
 
 .hero p {
-    margin: 16px 0 0;
-    font-size: clamp(.95rem, 2vw, 1.2rem);
-    font-weight: 700;
-    letter-spacing: .045em;
-    color: #167fa3;
+    margin: 20px 0 0;
 
-    text-shadow: 0 1px 0 white;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 900;
+    color: #555;
+
+    letter-spacing: .3px;
 }
 
 /* Game selection panel */
@@ -141,104 +122,94 @@ h1 {
 .game-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-    padding: 22px;
-    border-radius: 34px;
+    gap: 25px;
 
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.62),
-        rgba(255,255,255,.2)
-    );
+    padding: 25px;
 
-    border: 1px solid rgba(255,255,255,.86);
+    background: #ffffff;
+    border: 4px solid #292929;
 
-    box-shadow:
-        inset 0 2px 2px rgba(255,255,255,.9),
-        0 24px 55px rgba(0,105,155,.18);
+    border-radius: 35px 27px 38px 24px / 28px 37px 25px 34px;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 7px 8px 0 #292929;
+
+    transform: rotate(-.4deg);
 }
 
-/* Individual game tiles */
+/* Individual game buttons */
 
 .game-tile {
-    min-height: 190px;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    position: relative;
+    min-height: 210px;
 
-    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+
+    padding: 20px 10px;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 4px solid #292929;
+    border-radius: 23px 30px 21px 27px / 29px 22px 31px 23px;
+
     text-decoration: none;
 
-    border: 1px solid rgba(255,255,255,.95);
-
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.94),
-        rgba(150,230,250,.5)
-    );
-
-    box-shadow:
-        inset 0 4px 9px rgba(255,255,255,.95),
-        inset 0 -8px 18px rgba(26,147,190,.12),
-        0 10px 22px rgba(0,104,153,.14);
+    box-shadow: 4px 5px 0 #292929;
 
     transition:
-        transform .22s ease,
-        box-shadow .22s ease;
-}
-
-.game-tile::before {
-    content: "";
-    position: absolute;
-    width: 160%;
-    height: 65%;
-    top: -33%;
-    left: -30%;
-
-    transform: rotate(-18deg);
-    border-radius: 50%;
-
-    background: linear-gradient(
-        180deg,
-        rgba(255,255,255,.8),
-        rgba(255,255,255,0)
-    );
+        transform .18s ease,
+        box-shadow .18s ease;
 }
 
 .game-tile:hover,
 .game-tile:focus-visible {
-    transform: translateY(-8px) scale(1.025);
+    transform: translateY(-7px) rotate(-2deg);
+    box-shadow: 7px 9px 0 #292929;
 
-    box-shadow:
-        inset 0 4px 9px white,
-        0 18px 30px rgba(0,104,153,.25);
-
-    outline: 3px solid rgba(255,255,255,.85);
-    outline-offset: 4px;
+    outline: none;
 }
 
 .game-tile:active {
-    transform: translateY(-2px) scale(.99);
+    transform: translateY(2px) rotate(1deg);
+    box-shadow: 1px 2px 0 #292929;
 }
 
-/* Tile artwork */
+/* Different colors for each game */
+
+.tile-adam {
+    background: #ffaaa5;
+}
+
+.tile-chris {
+    background: #9edbff;
+}
+
+.tile-mason {
+    background: #a9edb1;
+}
+
+.tile-matthew {
+    background: #d2b5ff;
+}
+
+/* Hand-drawn artwork */
 
 .tile-art {
-    width: 106px;
-    height: 106px;
+    width: 100px;
+    height: 100px;
+
     display: block;
     position: relative;
 
-    border-radius: 30px;
-    transform: rotate(-8deg);
+    border: 4px solid #292929;
+    border-radius: 35% 65% 54% 46% / 57% 38% 62% 43%;
 
-    box-shadow:
-        0 12px 20px rgba(0,103,153,.2),
-        inset 0 3px 5px rgba(255,255,255,.9);
+    box-shadow: 3px 4px 0 #292929;
+
+    transform: rotate(-6deg);
 }
 
 .tile-art i,
@@ -250,199 +221,213 @@ h1 {
 /* Adam */
 
 .art-one {
-    background: linear-gradient(
-        145deg,
-        #c9fffb,
-        #27c8d7 55%,
-        #087da9
-    );
+    background: #ffdc55;
 }
 
 .art-one i {
-    width: 58px;
-    height: 58px;
-    left: 24px;
-    top: 23px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #fff, #8ceeff);
-    box-shadow: inset -5px -7px 12px #45aeca;
+    width: 55px;
+    height: 55px;
+    left: 18px;
+    top: 17px;
+
+    background: #fff8dc;
+    border: 4px solid #292929;
+    border-radius: 45% 55% 49% 51%;
 }
 
 .art-one b {
-    width: 32px;
+    width: 30px;
     height: 12px;
-    left: 37px;
-    top: 45px;
+    left: 30px;
+    top: 39px;
+
+    background: #ff806b;
+    border: 3px solid #292929;
     border-radius: 50%;
-    background: white;
-    transform: rotate(-25deg);
 }
 
 /* Chris */
 
 .art-two {
-    background: linear-gradient(
-        145deg,
-        #e8faff,
-        #63b9ff 55%,
-        #3266c8
-    );
+    background: #65c8f5;
+    border-radius: 23px 31px 25px 28px;
 }
 
 .art-two i {
-    width: 52px;
-    height: 66px;
-    left: 27px;
-    top: 19px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #fff, #b4eaff);
-    box-shadow: inset -5px -5px 10px #6bb6e3;
+    width: 55px;
+    height: 65px;
+    left: 17px;
+    top: 12px;
+
+    background: white;
+    border: 4px solid #292929;
+    border-radius: 12px 15px 10px 14px;
 }
 
 .art-two b {
-    width: 29px;
-    height: 29px;
-    left: 39px;
-    top: 38px;
-    border: 5px solid #2c9dcc;
+    width: 25px;
+    height: 25px;
+    left: 32px;
+    top: 30px;
+
+    background: #ffdc55;
+    border: 4px solid #292929;
     border-radius: 50%;
 }
 
 /* Mason */
 
 .art-three {
-    background: linear-gradient(
-        145deg,
-        #e5fff3,
-        #70dcae 55%,
-        #199c92
-    );
+    background: #77d98d;
 }
 
 .art-three i {
-    width: 64px;
-    height: 64px;
-    left: 21px;
-    top: 21px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #fff, #a6f8db);
-    box-shadow: inset -5px -6px 10px #61c9ad;
+    width: 62px;
+    height: 62px;
+    left: 15px;
+    top: 15px;
+
+    background: #eaffd9;
+    border: 4px solid #292929;
+    border-radius: 50% 45% 55% 42%;
 }
 
 .art-three b {
-    width: 34px;
-    height: 34px;
-    left: 36px;
-    top: 36px;
-    border: 5px solid #31b9a7;
+    width: 30px;
+    height: 30px;
+    left: 31px;
+    top: 31px;
+
+    background: #ffdc55;
+    border: 4px solid #292929;
     border-radius: 50%;
 }
 
 /* Matthew */
 
 .art-four {
-    background: linear-gradient(
-        145deg,
-        #f2faff,
-        #a9bfff 55%,
-        #627bd0
-    );
+    background: #b99aff;
+    border-radius: 25px 35px 22px 30px;
 }
 
 .art-four i {
     width: 60px;
     height: 60px;
-    left: 23px;
-    top: 23px;
-    border-radius: 18px;
-    background: linear-gradient(145deg, #fff, #c9d7ff);
-    box-shadow: inset -5px -6px 10px #9cabe5;
+    left: 15px;
+    top: 15px;
+
+    background: white;
+    border: 4px solid #292929;
+    border-radius: 17px 13px 18px 12px;
 }
 
 .art-four b {
-    width: 34px;
-    height: 34px;
-    left: 36px;
-    top: 36px;
-    border: 5px solid #7798df;
+    width: 30px;
+    height: 30px;
+    left: 30px;
+    top: 30px;
+
+    background: #ffaaa5;
+    border: 4px solid #292929;
     border-radius: 50%;
 }
 
-/* Floating bubbles */
+/* Member names */
+
+.game-name {
+    position: relative;
+    z-index: 1;
+
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: .5px;
+
+    color: #292929;
+    text-shadow: 1px 1px 0 rgba(255,255,255,.6);
+}
+
+/* Decorative doodles */
+
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
 
 .bubble {
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-
-    border: 1px solid rgba(255,255,255,.7);
-
-    background: radial-gradient(
-        circle at 32% 25%,
-        rgba(255,255,255,.9),
-        rgba(255,255,255,.13) 50%,
-        rgba(255,255,255,.02) 72%
-    );
-
-    box-shadow:
-        inset -5px -7px 12px rgba(255,255,255,.2),
-        0 8px 20px rgba(0,130,170,.08);
+    position: absolute;
+    border: 4px solid #292929;
+    border-radius: 45% 55% 50% 45%;
+    opacity: .8;
 }
 
 .bubble-one {
-    width: 74px;
-    height: 74px;
+    width: 45px;
+    height: 45px;
     left: 8%;
-    top: 17%;
+    top: 15%;
+    background: #ffdc55;
+    transform: rotate(20deg);
 }
 
 .bubble-two {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
     right: 13%;
-    top: 24%;
+    top: 22%;
+    background: #ffaaa5;
+    transform: rotate(-15deg);
 }
 
 .bubble-three {
-    width: 112px;
-    height: 112px;
-    right: 5%;
-    bottom: 8%;
+    width: 65px;
+    height: 65px;
+    right: 6%;
+    bottom: 10%;
+    background: #9edbff;
+    transform: rotate(25deg);
 }
 
 .bubble-four {
-    width: 48px;
-    height: 48px;
-    left: 15%;
+    width: 35px;
+    height: 35px;
+    left: 14%;
     bottom: 12%;
+    background: #a9edb1;
+    transform: rotate(-20deg);
 }
 
-/* Mobile layout */
+/* Responsive layout */
 
 @media (max-width: 720px) {
     .game-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-        padding: 16px;
+        gap: 17px;
+        padding: 18px;
     }
 
     .game-tile {
-        min-height: 155px;
+        min-height: 170px;
     }
 }
 
 @media (max-width: 390px) {
+    body {
+        padding: 30px 15px;
+    }
+
     .game-grid {
-        gap: 10px;
-        padding: 12px;
+        gap: 12px;
+        padding: 13px;
     }
 
     .game-tile {
-        min-height: 130px;
+        min-height: 145px;
     }
 
     .tile-art {
-        transform: scale(.82) rotate(-8deg);
+        transform: scale(.85) rotate(-6deg);
     }
 }
 
